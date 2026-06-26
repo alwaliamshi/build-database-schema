@@ -1,37 +1,62 @@
 # Build Database Schema
 
-## Overview
+## Project Overview
 
-This project demonstrates creating a MongoDB database schema using Mongoose and connecting to MongoDB using environment variables.
+This project demonstrates how to build a MongoDB database schema using Mongoose and configure database access using environment variables.
 
-## User Schema
+## Folder Structure
 
-Fields included:
+build-database-schema/
 
-* fullName → String (required, min 3, max 50)
-* email → String (required, unique)
-* age → Number (18–100)
-* role → Enum: user/admin (default: user)
-* active → Boolean (default: true)
+* config/
+
+  * db.js
+* models/
+
+  * User.js
+* index.js
+* .env.example
+* package.json
+
+## User Model
+
+The project includes a User model with the following fields:
+
+* fullName → String, required, minimum length 3, maximum length 50
+* email → String, required, unique
+* age → Number, minimum 18, maximum 100
+* role → String, allowed values: user or admin, default is user
+* active → Boolean, default true
 
 ## Installation
 
-```bash
+Install dependencies:
+
 npm install
-```
 
 ## Environment Setup
 
-Create a `.env` file:
+Create a `.env` file and add:
 
-```env
-MONGO_URI=your_connection_string
-```
+MONGO_URI=your_database_connection_string
 
-## Run Project
+`.env.example` is included as a template and should not contain secrets.
 
-```bash
+## Run
+
+Start the application:
+
 node index.js
-```
-# build-database-schema
-# build-database-schema
+
+## Validation
+
+This project uses Mongoose validation including:
+
+* required
+* enum
+* minlength
+* maxlength
+* min
+* max
+* unique
+* default
