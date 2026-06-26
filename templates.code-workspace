@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "../AI Transcription pro/templates"
+		},
+		{
+			"path": "../AI Transcription pro/routes"
+		},
+		{
+			"path": "../AI Transcription pro/services"
+		}
+	]
+}
